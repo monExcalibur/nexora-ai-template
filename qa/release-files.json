@@ -1,0 +1,71 @@
+{
+  "scope": "Nexora plus its new shared-root workflow only",
+  "modified": [
+    "nexora-ai/.env.example",
+    "nexora-ai/.gitignore",
+    "nexora-ai/CUSTOMIZATION_GUIDE.md",
+    "nexora-ai/PRODUCTION_RELEASE_PLAN.md",
+    "nexora-ai/README.md",
+    "nexora-ai/eslint.config.js",
+    "nexora-ai/package-lock.json",
+    "nexora-ai/package.json",
+    "nexora-ai/src/config/actions.ts",
+    "nexora-ai/src/config/index.ts",
+    "nexora-ai/src/config/presets.ts",
+    "nexora-ai/vite.config.ts"
+  ],
+  "removed": [
+    "nexora-ai/deployment/github-pages.yml"
+  ],
+  "removedIgnoredMigrationTools": [
+    "qa/upgrade-tools/extract-components.mjs",
+    "qa/upgrade-tools/extract-palette.mjs"
+  ],
+  "added": [
+    ".github/workflows/deploy-nexora.yml",
+    "nexora-ai/.github/workflows/deploy.yml",
+    "nexora-ai/.node-version",
+    "nexora-ai/ASSET_LICENSES.md",
+    "nexora-ai/DEPLOYMENT_GUIDE.md",
+    "nexora-ai/PRODUCTION_RELEASE_REPORT.md",
+    "nexora-ai/PUBLISHING.md",
+    "nexora-ai/public/licenses/lucide-LICENSE.txt",
+    "nexora-ai/public/licenses/react-MIT.txt",
+    "nexora-ai/qa/publication-audit.json",
+    "nexora-ai/qa/release-1024.jpg",
+    "nexora-ai/qa/release-1920.jpg",
+    "nexora-ai/qa/release-320.jpg",
+    "nexora-ai/qa/release-768.jpg",
+    "nexora-ai/qa/release-assets.json",
+    "nexora-ai/qa/release-browser-checks.json",
+    "nexora-ai/qa/release-builds.json",
+    "nexora-ai/qa/release-client-mobile.jpg",
+    "nexora-ai/qa/release-demo-mobile.jpg",
+    "nexora-ai/qa/release-desktop.jpg",
+    "nexora-ai/qa/release-doc-links.json",
+    "nexora-ai/qa/release-faq-mobile.jpg",
+    "nexora-ai/qa/release-features-detail.jpg",
+    "nexora-ai/qa/release-features.jpg",
+    "nexora-ai/qa/release-files.json",
+    "nexora-ai/qa/release-final-build.json",
+    "nexora-ai/qa/release-final-http.json",
+    "nexora-ai/qa/release-flowpilot.jpg",
+    "nexora-ai/qa/release-footer-mobile.jpg",
+    "nexora-ai/qa/release-historical-audit.json",
+    "nexora-ai/qa/release-mobile.jpg",
+    "nexora-ai/qa/release-preservation-http.json",
+    "nexora-ai/qa/release-pricing.jpg",
+    "nexora-ai/qa/release-workflow.jpg",
+    "nexora-ai/scripts/audit-publication.mjs",
+    "nexora-ai/scripts/pages-settings.mjs",
+    "nexora-ai/src/config/build.ts",
+    "nexora-ai/tests/cloudflare.test.ts",
+    "nexora-ai/tests/deployment.test.mjs"
+  ],
+  "candidateFiles": 87,
+  "notes": [
+    "PRODUCTION_RELEASE_PLAN.md was created before the initial hash snapshot, so it appears as modified.",
+    "No self-hash is generated for this inventory.",
+    "Cross-workspace initial hashes remain local and ignored; no sibling source was modified."
+  ]
+}

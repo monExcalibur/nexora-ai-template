@@ -1,0 +1,566 @@
+{
+  "checks": [
+    {
+      "name": "Default identity, layout and anchors preserved",
+      "pass": true,
+      "details": {
+        "accent": "#ad96ff",
+        "background": "rgb(9, 10, 16)",
+        "broken": [],
+        "faq": 6,
+        "features": 6,
+        "h1": "Make room for what matters.",
+        "headerTop": 0,
+        "indicator": "Concept Template",
+        "plans": 3,
+        "title": "Nexora AI — Make room for what matters"
+      }
+    },
+    {
+      "name": "Default yearly prices",
+      "pass": true
+    },
+    {
+      "name": "Selected annual plan in demo",
+      "pass": true
+    },
+    {
+      "name": "Local workflow result stays honest",
+      "pass": true
+    },
+    {
+      "name": "Workflow resets",
+      "pass": true
+    },
+    {
+      "name": "Modal forward Tab wrap",
+      "pass": true
+    },
+    {
+      "name": "Modal backward Tab wrap",
+      "pass": true
+    },
+    {
+      "name": "Escape returns focus",
+      "pass": true
+    },
+    {
+      "name": "Monthly prices restore",
+      "pass": true
+    },
+    {
+      "name": "FAQ 1 opens exclusively",
+      "pass": true
+    },
+    {
+      "name": "FAQ 2 opens exclusively",
+      "pass": true
+    },
+    {
+      "name": "FAQ 3 opens exclusively",
+      "pass": true
+    },
+    {
+      "name": "FAQ 4 opens exclusively",
+      "pass": true
+    },
+    {
+      "name": "FAQ 5 opens exclusively",
+      "pass": true
+    },
+    {
+      "name": "FAQ 6 opens exclusively",
+      "pass": true
+    },
+    {
+      "name": "FAQ keyboard close",
+      "pass": true
+    },
+    {
+      "name": "Configured task counter updates",
+      "pass": true
+    },
+    {
+      "name": "Demo CTA Get started",
+      "pass": true
+    },
+    {
+      "name": "Demo CTA Explore the demo",
+      "pass": true
+    },
+    {
+      "name": "Demo CTA Try the weekly update workflow",
+      "pass": true
+    },
+    {
+      "name": "Demo CTA Explore Starter",
+      "pass": true
+    },
+    {
+      "name": "Demo CTA Explore Pro",
+      "pass": true
+    },
+    {
+      "name": "Demo CTA Explore Business",
+      "pass": true
+    },
+    {
+      "name": "Demo CTA Find your flow",
+      "pass": true
+    },
+    {
+      "name": "Demo CTA Explore demo",
+      "pass": true
+    },
+    {
+      "name": "Mobile navigation opens",
+      "pass": true
+    },
+    {
+      "name": "Mobile navigation Escape",
+      "pass": true
+    },
+    {
+      "name": "Mobile link navigates and closes",
+      "pass": true
+    },
+    {
+      "name": "Nexora production console clean",
+      "pass": true,
+      "details": []
+    },
+    {
+      "name": "FlowPilot production identity/theme/assets",
+      "pass": true,
+      "details": {
+        "accent": "#86dfc1",
+        "benefits": 2,
+        "logo": true,
+        "plans": 2,
+        "title": "FlowPilot — Good plans. Great momentum."
+      }
+    },
+    {
+      "name": "FlowPilot yearly prices and totals",
+      "pass": true
+    },
+    {
+      "name": "FlowPilot configured plan demo",
+      "pass": true
+    },
+    {
+      "name": "FlowPilot console clean",
+      "pass": true,
+      "details": []
+    },
+    {
+      "name": "Client mode hides demo, sections and invalid anchors",
+      "pass": true,
+      "details": {
+        "badge": false,
+        "broken": [],
+        "dashboard": false,
+        "external": [
+          {
+            "href": "https://flowpilot.example/product",
+            "label": "Visit sample destination",
+            "rel": "noopener noreferrer",
+            "target": "_blank"
+          }
+        ],
+        "faq": false,
+        "pricing": true,
+        "solo": [
+          {
+            "href": "#how-it-works",
+            "text": "Review the approach"
+          }
+        ],
+        "unavailable": 5
+      }
+    },
+    {
+      "name": "Client external destination and label",
+      "pass": true
+    },
+    {
+      "name": "Client plan uses internal live destination",
+      "pass": true
+    },
+    {
+      "name": "Client responsive 320",
+      "pass": true,
+      "details": {
+        "client": 305,
+        "scroll": 305,
+        "width": 320
+      }
+    },
+    {
+      "name": "Client responsive 375",
+      "pass": true,
+      "details": {
+        "client": 360,
+        "scroll": 360,
+        "width": 375
+      }
+    },
+    {
+      "name": "Client responsive 768",
+      "pass": true,
+      "details": {
+        "client": 753,
+        "scroll": 753,
+        "width": 768
+      }
+    },
+    {
+      "name": "Client responsive 1024",
+      "pass": true,
+      "details": {
+        "client": 1009,
+        "scroll": 1009,
+        "width": 1024
+      }
+    },
+    {
+      "name": "Client responsive 1440",
+      "pass": true,
+      "details": {
+        "client": 1425,
+        "scroll": 1425,
+        "width": 1440
+      }
+    },
+    {
+      "name": "Client responsive 1920",
+      "pass": true,
+      "details": {
+        "client": 1905,
+        "scroll": 1905,
+        "width": 1920
+      }
+    },
+    {
+      "name": "Client internal CTA follows workflow",
+      "pass": true
+    },
+    {
+      "name": "Client console clean",
+      "pass": true,
+      "details": []
+    },
+    {
+      "name": "All optional sections disabled safely",
+      "pass": true,
+      "details": {
+        "broken": 0,
+        "client": 1920,
+        "dashboard": false,
+        "faq": false,
+        "features": false,
+        "h1": 1,
+        "navLinks": 0,
+        "pricing": false,
+        "scroll": 1920
+      }
+    },
+    {
+      "name": "Explicit base renders static metadata and application",
+      "pass": true
+    },
+    {
+      "name": "Explicit base demo works",
+      "pass": true
+    },
+    {
+      "name": "Explicit base console clean",
+      "pass": true,
+      "details": []
+    },
+    {
+      "name": "Nexora responsive 320",
+      "pass": true,
+      "details": {
+        "client": 305,
+        "scroll": 305,
+        "width": 320
+      }
+    },
+    {
+      "name": "Nexora responsive 375",
+      "pass": true,
+      "details": {
+        "client": 360,
+        "scroll": 360,
+        "width": 375
+      }
+    },
+    {
+      "name": "Nexora responsive 768",
+      "pass": true,
+      "details": {
+        "client": 753,
+        "scroll": 753,
+        "width": 768
+      }
+    },
+    {
+      "name": "Nexora responsive 1024",
+      "pass": true,
+      "details": {
+        "client": 1009,
+        "scroll": 1009,
+        "width": 1024
+      }
+    },
+    {
+      "name": "Nexora responsive 1440",
+      "pass": true,
+      "details": {
+        "client": 1425,
+        "scroll": 1425,
+        "width": 1440
+      }
+    },
+    {
+      "name": "Nexora responsive 1920",
+      "pass": true,
+      "details": {
+        "client": 1905,
+        "scroll": 1905,
+        "width": 1920
+      }
+    },
+    {
+      "name": "FlowPilot responsive 320",
+      "pass": true,
+      "details": {
+        "client": 305,
+        "scroll": 305,
+        "width": 320
+      }
+    },
+    {
+      "name": "FlowPilot responsive 375",
+      "pass": true,
+      "details": {
+        "client": 360,
+        "scroll": 360,
+        "width": 375
+      }
+    },
+    {
+      "name": "FlowPilot responsive 768",
+      "pass": true,
+      "details": {
+        "client": 753,
+        "scroll": 753,
+        "width": 768
+      }
+    },
+    {
+      "name": "FlowPilot responsive 1024",
+      "pass": true,
+      "details": {
+        "client": 1009,
+        "scroll": 1009,
+        "width": 1024
+      }
+    },
+    {
+      "name": "FlowPilot responsive 1440",
+      "pass": true,
+      "details": {
+        "client": 1425,
+        "scroll": 1425,
+        "width": 1440
+      }
+    },
+    {
+      "name": "FlowPilot responsive 1920",
+      "pass": true,
+      "details": {
+        "client": 1905,
+        "scroll": 1905,
+        "width": 1920
+      }
+    },
+    {
+      "name": "Final default build restored",
+      "pass": true
+    },
+    {
+      "name": "Final default demo works",
+      "pass": true
+    },
+    {
+      "name": "Final default console clean",
+      "pass": true,
+      "details": []
+    }
+  ],
+  "defaultStructure": {
+    "accent": "#ad96ff",
+    "background": "rgb(9, 10, 16)",
+    "broken": [],
+    "faq": 6,
+    "features": 6,
+    "h1": "Make room for what matters.",
+    "headerTop": 0,
+    "indicator": "Concept Template",
+    "plans": 3,
+    "title": "Nexora AI — Make room for what matters"
+  },
+  "flowStructure": {
+    "accent": "#86dfc1",
+    "benefits": 2,
+    "logo": true,
+    "plans": 2,
+    "title": "FlowPilot — Good plans. Great momentum."
+  },
+  "clientState": {
+    "badge": false,
+    "broken": [],
+    "dashboard": false,
+    "external": [
+      {
+        "href": "https://flowpilot.example/product",
+        "label": "Visit sample destination",
+        "rel": "noopener noreferrer",
+        "target": "_blank"
+      }
+    ],
+    "faq": false,
+    "pricing": true,
+    "solo": [
+      {
+        "href": "#how-it-works",
+        "text": "Review the approach"
+      }
+    ],
+    "unavailable": 5
+  },
+  "minimalState": {
+    "broken": 0,
+    "client": 1920,
+    "dashboard": false,
+    "faq": false,
+    "features": false,
+    "h1": 1,
+    "navLinks": 0,
+    "pricing": false,
+    "scroll": 1920
+  },
+  "responsive": {
+    "nexora": [
+      {
+        "client": 305,
+        "scroll": 305,
+        "width": 320
+      },
+      {
+        "client": 360,
+        "scroll": 360,
+        "width": 375
+      },
+      {
+        "client": 753,
+        "scroll": 753,
+        "width": 768
+      },
+      {
+        "client": 1009,
+        "scroll": 1009,
+        "width": 1024
+      },
+      {
+        "client": 1425,
+        "scroll": 1425,
+        "width": 1440
+      },
+      {
+        "client": 1905,
+        "scroll": 1905,
+        "width": 1920
+      }
+    ],
+    "flowpilot": [
+      {
+        "client": 305,
+        "scroll": 305,
+        "width": 320
+      },
+      {
+        "client": 360,
+        "scroll": 360,
+        "width": 375
+      },
+      {
+        "client": 753,
+        "scroll": 753,
+        "width": 768
+      },
+      {
+        "client": 1009,
+        "scroll": 1009,
+        "width": 1024
+      },
+      {
+        "client": 1425,
+        "scroll": 1425,
+        "width": 1440
+      },
+      {
+        "client": 1905,
+        "scroll": 1905,
+        "width": 1920
+      }
+    ],
+    "client": [
+      {
+        "client": 305,
+        "scroll": 305,
+        "width": 320
+      },
+      {
+        "client": 360,
+        "scroll": 360,
+        "width": 375
+      },
+      {
+        "client": 753,
+        "scroll": 753,
+        "width": 768
+      },
+      {
+        "client": 1009,
+        "scroll": 1009,
+        "width": 1024
+      },
+      {
+        "client": 1425,
+        "scroll": 1425,
+        "width": 1440
+      },
+      {
+        "client": 1905,
+        "scroll": 1905,
+        "width": 1920
+      }
+    ]
+  },
+  "console": {
+    "nexora": [],
+    "flowpilot": [],
+    "client": [],
+    "explicit": [],
+    "final": [],
+    "minimal": []
+  },
+  "limits": [
+    "No system reduced-motion emulation",
+    "No real external sample URL visits or email transmission",
+    "No remote CI or publishing"
+  ]
+}

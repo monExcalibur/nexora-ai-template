@@ -1,0 +1,261 @@
+{
+  "responsive": [
+    {
+      "clientWidth": 305,
+      "overflow": false,
+      "scrollWidth": 305,
+      "width": 320
+    },
+    {
+      "clientWidth": 360,
+      "overflow": false,
+      "scrollWidth": 360,
+      "width": 375
+    },
+    {
+      "clientWidth": 753,
+      "overflow": false,
+      "scrollWidth": 753,
+      "width": 768
+    },
+    {
+      "clientWidth": 1009,
+      "overflow": false,
+      "scrollWidth": 1009,
+      "width": 1024
+    },
+    {
+      "clientWidth": 1425,
+      "overflow": false,
+      "scrollWidth": 1425,
+      "width": 1440
+    },
+    {
+      "clientWidth": 1905,
+      "overflow": false,
+      "scrollWidth": 1905,
+      "width": 1920
+    }
+  ],
+  "interactions": [
+    {
+      "name": "Mobile menu closes with Escape",
+      "pass": true
+    },
+    {
+      "name": "Mobile navigation follows anchor and closes",
+      "pass": true,
+      "details": "http://127.0.0.1:4189/#pricing"
+    },
+    {
+      "name": "Annual prices and totals",
+      "pass": true,
+      "details": {
+        "notes": [
+          "Free concept plan · no card needed",
+          "$180 per workspace, billed yearly",
+          "$468 per workspace, billed yearly"
+        ],
+        "prices": [
+          "0",
+          "15",
+          "39"
+        ]
+      }
+    },
+    {
+      "name": "Selected Pro billing reaches dialog",
+      "pass": true
+    },
+    {
+      "name": "Workflow shows honest local result",
+      "pass": true
+    },
+    {
+      "name": "Demo reset restores initial state",
+      "pass": true
+    },
+    {
+      "name": "Escape closes dialog and returns focus",
+      "pass": true
+    },
+    {
+      "name": "Monthly prices restored",
+      "pass": true
+    },
+    {
+      "name": "FAQ 1 opens exclusively",
+      "pass": true,
+      "details": [
+        true,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "name": "FAQ 2 opens exclusively",
+      "pass": true,
+      "details": [
+        false,
+        true,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "name": "FAQ 3 opens exclusively",
+      "pass": true,
+      "details": [
+        false,
+        false,
+        true,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "name": "FAQ 4 opens exclusively",
+      "pass": true,
+      "details": [
+        false,
+        false,
+        false,
+        true,
+        false,
+        false
+      ]
+    },
+    {
+      "name": "FAQ 5 opens exclusively",
+      "pass": true,
+      "details": [
+        false,
+        false,
+        false,
+        false,
+        true,
+        false
+      ]
+    },
+    {
+      "name": "FAQ 6 opens exclusively",
+      "pass": true,
+      "details": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        true
+      ]
+    },
+    {
+      "name": "FAQ closes using keyboard",
+      "pass": true
+    },
+    {
+      "name": "Dashboard task updates metric",
+      "pass": true
+    },
+    {
+      "name": "Dashboard task restores metric",
+      "pass": true
+    },
+    {
+      "name": "CTA: Get started",
+      "pass": true
+    },
+    {
+      "name": "CTA: Explore the demo",
+      "pass": true
+    },
+    {
+      "name": "CTA: Try the weekly update workflow",
+      "pass": true
+    },
+    {
+      "name": "CTA: Explore Starter",
+      "pass": true
+    },
+    {
+      "name": "CTA: Explore Pro",
+      "pass": true
+    },
+    {
+      "name": "CTA: Explore Business",
+      "pass": true
+    },
+    {
+      "name": "CTA: Find your flow",
+      "pass": true
+    },
+    {
+      "name": "CTA: Explore demo",
+      "pass": true
+    },
+    {
+      "name": "Semantic structure, internal anchors and local assets",
+      "pass": true,
+      "details": {
+        "brokenAnchors": [],
+        "externalScriptsOrStyles": [],
+        "featureCount": 6,
+        "h1": 1,
+        "images": [],
+        "revealed": 15,
+        "unnamedButtons": 0
+      }
+    },
+    {
+      "name": "Dialog forward Tab wraps to close button",
+      "pass": true
+    },
+    {
+      "name": "Dialog backward Tab wraps to workflow button",
+      "pass": true
+    },
+    {
+      "name": "Production subpath anchor works",
+      "pass": true
+    },
+    {
+      "name": "Production subpath app is interactive",
+      "pass": true
+    },
+    {
+      "name": "Final production workflow works",
+      "pass": true
+    },
+    {
+      "name": "Final production console clean",
+      "pass": true,
+      "details": []
+    }
+  ],
+  "structure": {
+    "brokenAnchors": [],
+    "externalScriptsOrStyles": [],
+    "featureCount": 6,
+    "h1": 1,
+    "images": [],
+    "revealed": 15,
+    "unnamedButtons": 0
+  },
+  "productionAssets": {
+    "path": "/portfolio-demo/",
+    "scripts": [
+      "./assets/index-B7W9Eanx.js"
+    ],
+    "styles": [
+      "./assets/index-C5_mt1LR.css"
+    ],
+    "title": "Nexora AI — Make room for what matters"
+  },
+  "console": []
+}

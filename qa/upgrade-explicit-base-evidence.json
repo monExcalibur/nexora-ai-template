@@ -1,0 +1,30 @@
+[
+  {
+    "url": "http://127.0.0.1:4193/repository/",
+    "status": 200,
+    "type": [
+      "text/html"
+    ]
+  },
+  {
+    "url": "http://127.0.0.1:4193/repository/favicon.svg",
+    "status": 200,
+    "type": [
+      "image/svg+xml"
+    ]
+  },
+  {
+    "url": "http://127.0.0.1:4193/repository/assets/index--M1hl0O9.js",
+    "status": 200,
+    "type": [
+      "text/javascript"
+    ]
+  },
+  {
+    "url": "http://127.0.0.1:4193/repository/assets/index-BACGA2ys.css",
+    "status": 200,
+    "type": [
+      "text/css"
+    ]
+  }
+]

@@ -1,0 +1,219 @@
+{
+  "protectedWorkspaceFiles": 145,
+  "protectedWorkspaceChanges": [],
+  "protectedDesignAndHistoryFiles": 24,
+  "designAndHistoryChanges": [],
+  "httpFiles": 42,
+  "http": [
+    {
+      "file": "favicon.svg",
+      "status": 200,
+      "exactBytes": true
+    },
+    {
+      "file": "flowpilot.svg",
+      "status": 200,
+      "exactBytes": true
+    },
+    {
+      "file": "index.html",
+      "status": 200,
+      "exactBytes": true
+    },
+    {
+      "file": "assets/index-C57EeYBa.js",
+      "status": 200,
+      "exactBytes": true
+    },
+    {
+      "file": "assets/index-D0CjDw7g.css",
+      "status": 200,
+      "exactBytes": true
+    },
+    {
+      "file": "client/favicon.svg",
+      "status": 200,
+      "exactBytes": true
+    },
+    {
+      "file": "client/flowpilot.svg",
+      "status": 200,
+      "exactBytes": true
+    },
+    {
+      "file": "client/index.html",
+      "status": 200,
+      "exactBytes": true
+    },
+    {
+      "file": "flowpilot/favicon.svg",
+      "status": 200,
+      "exactBytes": true
+    },
+    {
+      "file": "flowpilot/flowpilot.svg",
+      "status": 200,
+      "exactBytes": true
+    },
+    {
+      "file": "flowpilot/index.html",
+      "status": 200,
+      "exactBytes": true
+    },
+    {
+      "file": "licenses/lucide-LICENSE.txt",
+      "status": 200,
+      "exactBytes": true
+    },
+    {
+      "file": "licenses/react-MIT.txt",
+      "status": 200,
+      "exactBytes": true
+    },
+    {
+      "file": "minimal/favicon.svg",
+      "status": 200,
+      "exactBytes": true
+    },
+    {
+      "file": "minimal/flowpilot.svg",
+      "status": 200,
+      "exactBytes": true
+    },
+    {
+      "file": "minimal/index.html",
+      "status": 200,
+      "exactBytes": true
+    },
+    {
+      "file": "nexora-ai/favicon.svg",
+      "status": 200,
+      "exactBytes": true
+    },
+    {
+      "file": "nexora-ai/flowpilot.svg",
+      "status": 200,
+      "exactBytes": true
+    },
+    {
+      "file": "nexora-ai/index.html",
+      "status": 200,
+      "exactBytes": true
+    },
+    {
+      "file": "portable/favicon.svg",
+      "status": 200,
+      "exactBytes": true
+    },
+    {
+      "file": "portable/flowpilot.svg",
+      "status": 200,
+      "exactBytes": true
+    },
+    {
+      "file": "portable/index.html",
+      "status": 200,
+      "exactBytes": true
+    },
+    {
+      "file": "portable/assets/index-D0CjDw7g.css",
+      "status": 200,
+      "exactBytes": true
+    },
+    {
+      "file": "portable/assets/index-rDs0Fmqg.js",
+      "status": 200,
+      "exactBytes": true
+    },
+    {
+      "file": "portable/licenses/lucide-LICENSE.txt",
+      "status": 200,
+      "exactBytes": true
+    },
+    {
+      "file": "portable/licenses/react-MIT.txt",
+      "status": 200,
+      "exactBytes": true
+    },
+    {
+      "file": "nexora-ai/assets/index-Bwfx-faO.js",
+      "status": 200,
+      "exactBytes": true
+    },
+    {
+      "file": "nexora-ai/assets/index-D0CjDw7g.css",
+      "status": 200,
+      "exactBytes": true
+    },
+    {
+      "file": "nexora-ai/licenses/lucide-LICENSE.txt",
+      "status": 200,
+      "exactBytes": true
+    },
+    {
+      "file": "nexora-ai/licenses/react-MIT.txt",
+      "status": 200,
+      "exactBytes": true
+    },
+    {
+      "file": "minimal/assets/index-40I8YORr.js",
+      "status": 200,
+      "exactBytes": true
+    },
+    {
+      "file": "minimal/assets/index-D0CjDw7g.css",
+      "status": 200,
+      "exactBytes": true
+    },
+    {
+      "file": "minimal/licenses/lucide-LICENSE.txt",
+      "status": 200,
+      "exactBytes": true
+    },
+    {
+      "file": "minimal/licenses/react-MIT.txt",
+      "status": 200,
+      "exactBytes": true
+    },
+    {
+      "file": "flowpilot/assets/index-CQLdmtaX.js",
+      "status": 200,
+      "exactBytes": true
+    },
+    {
+      "file": "flowpilot/assets/index-D0CjDw7g.css",
+      "status": 200,
+      "exactBytes": true
+    },
+    {
+      "file": "flowpilot/licenses/lucide-LICENSE.txt",
+      "status": 200,
+      "exactBytes": true
+    },
+    {
+      "file": "flowpilot/licenses/react-MIT.txt",
+      "status": 200,
+      "exactBytes": true
+    },
+    {
+      "file": "client/assets/index-D0CjDw7g.css",
+      "status": 200,
+      "exactBytes": true
+    },
+    {
+      "file": "client/assets/index-_Z_zDa0K.js",
+      "status": 200,
+      "exactBytes": true
+    },
+    {
+      "file": "client/licenses/lucide-LICENSE.txt",
+      "status": 200,
+      "exactBytes": true
+    },
+    {
+      "file": "client/licenses/react-MIT.txt",
+      "status": 200,
+      "exactBytes": true
+    }
+  ]
+}

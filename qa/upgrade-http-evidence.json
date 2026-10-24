@@ -1,0 +1,86 @@
+[
+  {
+    "preset": "nexora",
+    "html": 200,
+    "title": "Nexora AI — Make room for what matters",
+    "openGraph": true,
+    "placeholder": false,
+    "assets": [
+      {
+        "url": "http://127.0.0.1:4190/template-qa/nexora/favicon.svg",
+        "status": 200
+      },
+      {
+        "url": "http://127.0.0.1:4190/template-qa/nexora/assets/index-CvET2smU.js",
+        "status": 200
+      },
+      {
+        "url": "http://127.0.0.1:4190/template-qa/nexora/assets/index-B80LU2gb.css",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "preset": "flowpilot",
+    "html": 200,
+    "title": "FlowPilot — Good plans. Great momentum.",
+    "openGraph": true,
+    "placeholder": false,
+    "assets": [
+      {
+        "url": "http://127.0.0.1:4190/template-qa/flowpilot/flowpilot.svg",
+        "status": 200
+      },
+      {
+        "url": "http://127.0.0.1:4190/template-qa/flowpilot/assets/index-Q57-ObOK.js",
+        "status": 200
+      },
+      {
+        "url": "http://127.0.0.1:4190/template-qa/flowpilot/assets/index-B80LU2gb.css",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "preset": "client",
+    "html": 200,
+    "title": "FlowPilot — Good plans. Great momentum.",
+    "openGraph": true,
+    "placeholder": false,
+    "assets": [
+      {
+        "url": "http://127.0.0.1:4190/template-qa/client/flowpilot.svg",
+        "status": 200
+      },
+      {
+        "url": "http://127.0.0.1:4190/template-qa/client/assets/index-Z4QK5vjm.js",
+        "status": 200
+      },
+      {
+        "url": "http://127.0.0.1:4190/template-qa/client/assets/index-B80LU2gb.css",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "preset": "minimal",
+    "html": 200,
+    "title": "Nexora AI — Make room for what matters",
+    "openGraph": true,
+    "placeholder": false,
+    "assets": [
+      {
+        "url": "http://127.0.0.1:4190/template-qa/minimal/favicon.svg",
+        "status": 200
+      },
+      {
+        "url": "http://127.0.0.1:4190/template-qa/minimal/assets/index-DEqifblG.js",
+        "status": 200
+      },
+      {
+        "url": "http://127.0.0.1:4190/template-qa/minimal/assets/index-B80LU2gb.css",
+        "status": 200
+      }
+    ]
+  }
+]

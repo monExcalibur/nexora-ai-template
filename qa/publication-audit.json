@@ -1,0 +1,15 @@
+{
+  "scope": ".",
+  "candidateFiles": 86,
+  "textFilesScanned": 71,
+  "findings": [],
+  "missingAssets": [],
+  "assetsChecked": 4,
+  "demo": {
+    "enabled": true,
+    "fictional": true,
+    "hasContactEmail": false,
+    "socialLinks": 0
+  },
+  "limitations": "Pattern-based local candidate audit, not a complete security guarantee. Findings omit secret values. Review staged files before publication."
+}

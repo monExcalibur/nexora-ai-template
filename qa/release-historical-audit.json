@@ -1,0 +1,9 @@
+{
+  "currentReleaseStyleUnchanged": true,
+  "historicalToolScope": "Pre-template-upgrade stylesheet, not the completed release baseline",
+  "firstDifference": {
+    "index": 4947,
+    "current": "flex-wrap:wrap;align-items:center;justify-content:center;gap:12px;margin-top:28px;}.hero-assurances{display:flex;justify-content:center;gap:22px;color:#93909f;f",
+    "preUpgrade": "align-items:center;justify-content:center;gap:12px;margin-top:28px;}.hero-assurances{display:flex;justify-content:center;gap:22px;color:#93909f;font-size:10px;m"
+  }
+}

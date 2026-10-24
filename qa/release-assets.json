@@ -1,0 +1,13 @@
+{
+  "localSvgs": [
+    "favicon.svg",
+    "flowpilot.svg"
+  ],
+  "rasterImages": 0,
+  "downloadedFonts": 0,
+  "runtimeNotices": [
+    "licenses/react-MIT.txt",
+    "licenses/lucide-LICENSE.txt"
+  ],
+  "noticeCopiesExact": true
+}

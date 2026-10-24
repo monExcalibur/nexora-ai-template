@@ -1,0 +1,55 @@
+[
+  {
+    "name": "cloudflare-root",
+    "passed": true,
+    "canonical": "https://nexora-release-qa.example/"
+  },
+  {
+    "name": "nexora-ai",
+    "options": {
+      "VITE_BASE_PATH": "/nexora-ai/",
+      "VITE_SITE_URL": "https://pages-release-qa.example/nexora-ai/"
+    },
+    "passed": true,
+    "buildOutput": "Existing completed build reused; metadata and files verified."
+  },
+  {
+    "name": "flowpilot",
+    "options": {
+      "VITE_BASE_PATH": "/flowpilot/",
+      "VITE_SITE_PRESET": "flowpilot"
+    },
+    "passed": true,
+    "buildOutput": "Existing completed build reused; metadata and files verified."
+  },
+  {
+    "name": "client",
+    "options": {
+      "VITE_BASE_PATH": "/client/",
+      "VITE_SITE_PRESET": "flowpilot",
+      "VITE_DEMO_MODE": "false",
+      "VITE_DISABLED_SECTIONS": "dashboard,faq"
+    },
+    "passed": true,
+    "buildOutput": "vite v8.3.5 building client environment for production...\ntransforming...\n✓ 1953 modules transformed.\nrendering chunks...\ncomputing gzip size...\nqa/release-preview/client/index.html                   8.38 kB │ gzip:  3.32 kB\nqa/release-preview/client/assets/index-D0CjDw7g.css   54.09 kB │ gzip: 12.44 kB\nqa/release-preview/client/assets/index-_Z_zDa0K.js   281.38 kB │ gzip: 87.32 kB\n\n✓ built in 3.43s\n"
+  },
+  {
+    "name": "minimal",
+    "options": {
+      "VITE_BASE_PATH": "/minimal/",
+      "VITE_DISABLED_SECTIONS": "hero,dashboard,workStrip,features,workflow,benefits,pricing,faq,finalCta"
+    },
+    "passed": true,
+    "buildOutput": "vite v8.3.5 building client environment for production...\ntransforming...\n✓ 1953 modules transformed.\nrendering chunks...\ncomputing gzip size...\nqa/release-preview/minimal/index.html                   8.52 kB │ gzip:  2.97 kB\nqa/release-preview/minimal/assets/index-D0CjDw7g.css   54.09 kB │ gzip: 12.44 kB\nqa/release-preview/minimal/assets/index-40I8YORr.js   281.44 kB │ gzip: 87.34 kB\n\n✓ built in 3.85s\n"
+  },
+  {
+    "name": "portable",
+    "options": {},
+    "passed": true,
+    "buildOutput": "vite v8.3.5 building client environment for production...\ntransforming...\n✓ 1953 modules transformed.\nrendering chunks...\ncomputing gzip size...\nqa/release-preview/portable/index.html                   8.50 kB │ gzip:  2.95 kB\nqa/release-preview/portable/assets/index-D0CjDw7g.css   54.09 kB │ gzip: 12.44 kB\nqa/release-preview/portable/assets/index-rDs0Fmqg.js   281.36 kB │ gzip: 87.31 kB\n\n✓ built in 3.66s\n"
+  },
+  {
+    "name": "conflicting-cloudflare-cli-base",
+    "rejected": true
+  }
+]

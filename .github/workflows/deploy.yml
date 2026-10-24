@@ -1,0 +1,106 @@
+name: Deploy Nexora AI to GitHub Pages
+
+# Preparation alone does not publish. The owner starts a run explicitly.
+on:
+  workflow_dispatch:
+    inputs:
+      site_preset:
+        description: Template example to build
+        required: true
+        type: choice
+        default: nexora
+        options:
+          - nexora
+          - flowpilot
+      demo_mode:
+        description: Keep honest local demonstration behavior
+        required: true
+        type: boolean
+        default: true
+      base_path:
+        description: Optional base override; leave empty to use GitHub Pages configuration
+        required: false
+        type: string
+        default: ''
+
+permissions:
+  contents: read
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: read
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+      - name: Locate the Vite project
+        id: project
+        shell: bash
+        run: |
+          if [[ -f package-lock.json && -f vite.config.ts ]]; then
+            directory=.
+          elif [[ -f nexora-ai/package-lock.json && -f nexora-ai/vite.config.ts ]]; then
+            directory=nexora-ai
+          else
+            echo 'Nexora project was not found at the repository root or nexora-ai/.' >&2
+            exit 1
+          fi
+          echo "directory=$directory" >> "$GITHUB_OUTPUT"
+      - name: Set up Node
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: ${{ steps.project.outputs.directory }}/package-lock.json
+      - name: Read GitHub Pages metadata
+        id: pages
+        uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6
+      - name: Resolve public base and canonical URL
+        working-directory: ${{ steps.project.outputs.directory }}
+        run: node scripts/pages-settings.mjs
+        env:
+          PAGES_BASE_PATH: ${{ steps.pages.outputs.base_path }}
+          PAGES_URL: ${{ steps.pages.outputs.base_url }}
+          REQUESTED_BASE_PATH: ${{ inputs.base_path }}
+      - name: Install locked dependencies
+        working-directory: ${{ steps.project.outputs.directory }}
+        run: npm ci
+      - name: Verify source and deployment contracts
+        working-directory: ${{ steps.project.outputs.directory }}
+        run: |
+          npm run format:check
+          npm run typecheck
+          npm run lint
+          npm test
+          npm run audit:publication
+      - name: Build public demonstration
+        working-directory: ${{ steps.project.outputs.directory }}
+        run: npm run build
+        env:
+          VITE_SITE_PRESET: ${{ inputs.site_preset }}
+          VITE_DEMO_MODE: ${{ inputs.demo_mode && 'true' || 'false' }}
+          VITE_DISABLED_SECTIONS: ''
+      - name: Upload only the static build
+        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5
+        with:
+          path: ${{ steps.project.outputs.directory }}/dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy the verified artifact
+        id: deployment
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5

@@ -1,0 +1,45 @@
+{
+  "target": "Cloudflare root, default Nexora demo",
+  "buildCommand": "CF_PAGES=1 npm run build",
+  "canonicalOmitted": true,
+  "unconfiguredSocialImageOmitted": true,
+  "files": [
+    {
+      "file": "favicon.svg",
+      "bytes": 183,
+      "gzipBytes": 170
+    },
+    {
+      "file": "flowpilot.svg",
+      "bytes": 245,
+      "gzipBytes": 194
+    },
+    {
+      "file": "index.html",
+      "bytes": 8505,
+      "gzipBytes": 2976
+    },
+    {
+      "file": "assets/index-D0CjDw7g.css",
+      "bytes": 54092,
+      "gzipBytes": 12270
+    },
+    {
+      "file": "assets/index-DwwvkyAW.js",
+      "bytes": 281361,
+      "gzipBytes": 86137
+    },
+    {
+      "file": "licenses/lucide-LICENSE.txt",
+      "bytes": 3208,
+      "gzipBytes": 1500
+    },
+    {
+      "file": "licenses/react-MIT.txt",
+      "bytes": 1088,
+      "gzipBytes": 654
+    }
+  ],
+  "findings": [],
+  "limitations": "Default bundle intentionally includes the optional FlowPilot reserved .example configuration; it makes no external requests in the Nexora demo."
+}

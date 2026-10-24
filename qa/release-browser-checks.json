@@ -1,0 +1,528 @@
+[
+  {
+    "name": "desktop structure",
+    "passed": true,
+    "h1": 1,
+    "brokenAnchors": 0,
+    "unnamedButtons": 0,
+    "forms": 0
+  },
+  {
+    "name": "1024px layout",
+    "client": 1009,
+    "scroll": 1009,
+    "width": 1024,
+    "passed": true
+  },
+  {
+    "name": "768px layout",
+    "client": 753,
+    "scroll": 753,
+    "width": 768,
+    "passed": true
+  },
+  {
+    "name": "375px layout",
+    "client": 360,
+    "scroll": 360,
+    "width": 375,
+    "passed": true
+  },
+  {
+    "name": "320px layout",
+    "client": 305,
+    "scroll": 305,
+    "width": 320,
+    "passed": true
+  },
+  {
+    "name": "menu Escape closes and restores focus",
+    "passed": true,
+    "expanded": "false",
+    "focused": "Open navigation",
+    "hidden": true
+  },
+  {
+    "name": "mobile pricing navigation closes menu",
+    "passed": true,
+    "hash": "#pricing",
+    "hidden": true
+  },
+  {
+    "name": "Nexora yearly prices",
+    "passed": true,
+    "prices": [
+      "0",
+      "15",
+      "39"
+    ]
+  },
+  {
+    "name": "Nexora annual totals",
+    "passed": true,
+    "billing": [
+      "Free concept plan · no card needed",
+      "$180 per workspace, billed yearly",
+      "$468 per workspace, billed yearly"
+    ]
+  },
+  {
+    "name": "yearly plan modal opens with selected terms",
+    "passed": true,
+    "plan": "Pro",
+    "yearlyTotal": 180
+  },
+  {
+    "name": "dialog Shift+Tab wraps",
+    "passed": true,
+    "focused": "Run sample workflow"
+  },
+  {
+    "name": "dialog Tab wraps",
+    "passed": true,
+    "focused": "Close demo"
+  },
+  {
+    "name": "local workflow reveals fixed sample",
+    "passed": true,
+    "result": "Sample update ready to review\n\n“This week, the team finalized the brand direction, reviewed homepage wireframes, and aligned on the creative brief. Next up: bring the new homepage to life.”\n\nGenerated from a fixed example. Nothing was sent."
+  },
+  {
+    "name": "workflow resets",
+    "passed": true
+  },
+  {
+    "name": "workflow result is deterministic",
+    "passed": true
+  },
+  {
+    "name": "Escape closes dialog, unlocks page and restores CTA focus",
+    "passed": true,
+    "bodyOverflow": "",
+    "dialogs": 0,
+    "focus": "Explore Pro"
+  },
+  {
+    "name": "monthly prices restore",
+    "passed": true,
+    "prices": [
+      "0",
+      "19",
+      "49"
+    ]
+  },
+  {
+    "name": "CTA: Get started",
+    "passed": true,
+    "open": true,
+    "selection": "Exploring the platformSample workspace"
+  },
+  {
+    "name": "CTA closes: Get started",
+    "passed": true
+  },
+  {
+    "name": "CTA: Explore the demo",
+    "passed": true,
+    "open": true,
+    "selection": "Exploring the platformSample workspace"
+  },
+  {
+    "name": "CTA closes: Explore the demo",
+    "passed": true
+  },
+  {
+    "name": "CTA: Try the weekly update workflow",
+    "passed": true,
+    "open": true,
+    "selection": "Exploring the platformSample workspace"
+  },
+  {
+    "name": "CTA closes: Try the weekly update workflow",
+    "passed": true
+  },
+  {
+    "name": "CTA: Explore Starter",
+    "passed": true,
+    "open": true,
+    "selection": "Starter plan selectedFree concept plan"
+  },
+  {
+    "name": "CTA closes: Explore Starter",
+    "passed": true
+  },
+  {
+    "name": "CTA: Explore Pro",
+    "passed": true,
+    "open": true,
+    "selection": "Pro plan selected$19 / month per workspace"
+  },
+  {
+    "name": "CTA closes: Explore Pro",
+    "passed": true
+  },
+  {
+    "name": "CTA: Explore Business",
+    "passed": true,
+    "open": true,
+    "selection": "Business plan selected$49 / month per workspace"
+  },
+  {
+    "name": "CTA closes: Explore Business",
+    "passed": true
+  },
+  {
+    "name": "CTA: Find your flow",
+    "passed": true,
+    "open": true,
+    "selection": "Exploring the platformSample workspace"
+  },
+  {
+    "name": "CTA closes: Find your flow",
+    "passed": true
+  },
+  {
+    "name": "CTA: Explore demo",
+    "passed": true,
+    "open": true,
+    "selection": "Exploring the platformSample workspace"
+  },
+  {
+    "name": "CTA closes: Explore demo",
+    "passed": true
+  },
+  {
+    "name": "keyboard task updates metric",
+    "passed": true,
+    "checked": true,
+    "metric": "19/ 24"
+  },
+  {
+    "name": "pointer task toggles back",
+    "passed": true
+  },
+  {
+    "name": "task updates metric: Review homepage wireframes",
+    "passed": true,
+    "metric": "19/ 24"
+  },
+  {
+    "name": "task updates metric: Send the weekly team update",
+    "passed": true,
+    "metric": "17/ 24"
+  },
+  {
+    "name": "task updates metric: Prepare discovery workshop",
+    "passed": true,
+    "metric": "19/ 24"
+  },
+  {
+    "name": "task metric restored",
+    "passed": true
+  },
+  {
+    "name": "FAQ keyboard exclusive 1",
+    "passed": true,
+    "open": [
+      0
+    ],
+    "text": "Nexora AI is a fictional productivity platform imagined for this frontend portfolio. It brings task prioritization, workflow automation, and team context into one considered workspace. This website demonstrates the experience; it is not an operating SaaS service."
+  },
+  {
+    "name": "FAQ keyboard exclusive 2",
+    "passed": true,
+    "open": [
+      1
+    ],
+    "text": "Open “Explore the demo” and run the sample weekly-update workflow. You will see how completed tasks become a concise team summary. Everything happens locally on this page, using sample data. Nothing is sent to a service or another person."
+  },
+  {
+    "name": "FAQ keyboard exclusive 3",
+    "passed": true,
+    "open": [
+      2
+    ],
+    "text": "Connected tools are part of the product concept. This portfolio does not connect to external accounts, calendars, documents, or messaging services. The interface uses original illustrative UI rather than live integrations."
+  },
+  {
+    "name": "FAQ keyboard exclusive 4",
+    "passed": true,
+    "open": [
+      3
+    ],
+    "text": "No. All buttons open a local product demonstration. Prices and plans are fictional, and there is no checkout, billing, trial subscription, or account creation."
+  },
+  {
+    "name": "FAQ keyboard exclusive 5",
+    "passed": true,
+    "open": [
+      4
+    ],
+    "text": "This demo does not ask for personal information and uses no analytics, cookies, or local storage. Task selections and demo progress stay in browser memory and reset when you refresh. No data is transmitted by the demo."
+  },
+  {
+    "name": "FAQ keyboard exclusive 6",
+    "passed": true,
+    "open": [
+      5
+    ],
+    "text": "Yes. Use the billing toggle above to compare illustrative monthly prices with yearly equivalents. Yearly prices display the full annual amount below each price. Choosing a plan only previews that selection inside the local demo."
+  },
+  {
+    "name": "FAQ can close",
+    "passed": true
+  },
+  {
+    "name": "footer workflow/pricing anchors",
+    "passed": true
+  },
+  {
+    "name": "anchor A little less busy. A lot more possible.",
+    "passed": true
+  },
+  {
+    "name": "anchor See it in action",
+    "passed": true,
+    "retested": "Keyboard activation passed after smooth scroll; initial immediate pointer automation raced scroll."
+  },
+  {
+    "name": "secondary product link keyboard",
+    "passed": true,
+    "hash": "#product"
+  },
+  {
+    "name": "keyboard anchor A little less busy. A lot more possible.",
+    "passed": true
+  },
+  {
+    "name": "keyboard anchor Explore features",
+    "passed": true
+  },
+  {
+    "name": "keyboard anchor Take a closer look",
+    "passed": true
+  },
+  {
+    "name": "Main navigation Features",
+    "passed": true
+  },
+  {
+    "name": "Main navigation How it works",
+    "passed": true
+  },
+  {
+    "name": "Main navigation Pricing",
+    "passed": true
+  },
+  {
+    "name": "Main navigation FAQ",
+    "passed": true
+  },
+  {
+    "name": "Footer navigation Features",
+    "passed": true
+  },
+  {
+    "name": "Footer navigation How it works",
+    "passed": true
+  },
+  {
+    "name": "Footer navigation Pricing",
+    "passed": true
+  },
+  {
+    "name": "Footer navigation FAQ",
+    "passed": true
+  },
+  {
+    "name": "skip link bypasses navigation",
+    "passed": true,
+    "activated": {
+      "focusedId": "",
+      "focusedTag": "BODY",
+      "hash": "#main"
+    },
+    "next": {
+      "focus": "A little less busy. A lot more possible.",
+      "insideMain": true
+    }
+  },
+  {
+    "name": "mobile menu CTA opens demo and closes navigation",
+    "passed": true,
+    "dialog": true,
+    "menuHidden": true
+  },
+  {
+    "name": "desktop resize closes mobile menu",
+    "passed": true,
+    "client": 1905,
+    "menuHidden": true,
+    "scroll": 1905,
+    "width": 1920,
+    "retested": "Verified after the resize event completed."
+  },
+  {
+    "name": "1920px layout",
+    "passed": true,
+    "width": 1920,
+    "client": 1905,
+    "scroll": 1905
+  },
+  {
+    "name": "1440px layout",
+    "passed": true,
+    "width": 1440,
+    "client": 1425,
+    "scroll": 1425
+  },
+  {
+    "name": "Nexora browser warning/error log",
+    "passed": true
+  },
+  {
+    "name": "FlowPilot brand, local logo, green theme, two plans and anchors",
+    "passed": true,
+    "accent": "#83debe",
+    "brokenAnchors": 0,
+    "client": 1425,
+    "h1": "Good plans.Better flow.",
+    "images": [
+      {
+        "complete": true,
+        "src": "/flowpilot/flowpilot.svg",
+        "width": 150
+      },
+      {
+        "complete": true,
+        "src": "/flowpilot/flowpilot.svg",
+        "width": 150
+      },
+      {
+        "complete": true,
+        "src": "/flowpilot/flowpilot.svg",
+        "width": 150
+      }
+    ],
+    "plans": 2,
+    "scroll": 1425,
+    "title": "FlowPilot — Good plans. Great momentum."
+  },
+  {
+    "name": "FlowPilot monthly prices",
+    "passed": true,
+    "prices": [
+      "12",
+      "29"
+    ]
+  },
+  {
+    "name": "FlowPilot yearly prices and totals",
+    "passed": true,
+    "prices": [
+      "9",
+      "23"
+    ],
+    "billing": [
+      "$108 per workspace, billed yearly",
+      "$276 per workspace, billed yearly"
+    ]
+  },
+  {
+    "name": "FlowPilot selected yearly plan demo",
+    "passed": true
+  },
+  {
+    "name": "client mode hides sections, rewires anchors and retains honest copy",
+    "passed": true,
+    "brokenAnchors": 0,
+    "client": 360,
+    "clientAssurance": true,
+    "dashboard": false,
+    "demoLabel": false,
+    "disabled": [
+      "Discuss your workspace",
+      "Discuss your workspace",
+      "Discuss Team",
+      "Find your flow",
+      "Explore demo"
+    ],
+    "external": [
+      {
+        "href": "https://flowpilot.example/product",
+        "rel": "noopener noreferrer",
+        "target": "_blank"
+      }
+    ],
+    "faq": false,
+    "h1": 1,
+    "scroll": 360
+  },
+  {
+    "name": "client external example is safe new-tab link (not visited)",
+    "passed": true
+  },
+  {
+    "name": "missing client destinations are disabled",
+    "passed": true
+  },
+  {
+    "name": "client plan uses configured internal destination",
+    "passed": true
+  },
+  {
+    "name": "client pricing remains interactive",
+    "passed": true
+  },
+  {
+    "name": "all sections hidden configuration remains coherent",
+    "passed": true,
+    "brokenAnchors": 0,
+    "client": 375,
+    "h1": 1,
+    "scroll": 375,
+    "sections": 0
+  },
+  {
+    "name": "all-hidden configuration retains functional local demo",
+    "passed": true
+  },
+  {
+    "name": "repository subpath assets and direct refresh",
+    "passed": true,
+    "canonical": "https://pages-release-qa.example/nexora-ai/",
+    "css": [
+      "/nexora-ai/assets/index-D0CjDw7g.css"
+    ],
+    "favicon": "/nexora-ai/favicon.svg",
+    "h1": 1,
+    "js": [
+      "/nexora-ai/assets/index-Bwfx-faO.js"
+    ],
+    "title": "Nexora AI — Make room for what matters"
+  },
+  {
+    "name": "all configuration console logs clean",
+    "passed": true
+  },
+  {
+    "name": "final production root omits invented canonical and loads only local assets",
+    "passed": true,
+    "canonical": null,
+    "client": 1425,
+    "concept": true,
+    "favicon": "/favicon.svg",
+    "forms": 0,
+    "h1": 1,
+    "resources": [
+      "http://127.0.0.1:4198/favicon.svg",
+      "http://127.0.0.1:4198/assets/index-DwwvkyAW.js",
+      "http://127.0.0.1:4198/assets/index-D0CjDw7g.css"
+    ],
+    "scroll": 1425
+  },
+  {
+    "name": "final browser console clean",
+    "passed": true
+  }
+]

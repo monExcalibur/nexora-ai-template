@@ -1,0 +1,37 @@
+[
+  {
+    "file": "favicon.svg",
+    "status": 200,
+    "exactBytes": true
+  },
+  {
+    "file": "flowpilot.svg",
+    "status": 200,
+    "exactBytes": true
+  },
+  {
+    "file": "index.html",
+    "status": 200,
+    "exactBytes": true
+  },
+  {
+    "file": "assets/index-D0CjDw7g.css",
+    "status": 200,
+    "exactBytes": true
+  },
+  {
+    "file": "assets/index-DwwvkyAW.js",
+    "status": 200,
+    "exactBytes": true
+  },
+  {
+    "file": "licenses/lucide-LICENSE.txt",
+    "status": 200,
+    "exactBytes": true
+  },
+  {
+    "file": "licenses/react-MIT.txt",
+    "status": 200,
+    "exactBytes": true
+  }
+]
