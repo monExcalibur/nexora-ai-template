@@ -1,7 +1,7 @@
 {
   "scope": ".",
-  "candidateFiles": 89,
-  "textFilesScanned": 74,
+  "candidateFiles": 96,
+  "textFilesScanned": 77,
   "findings": [],
   "missingAssets": [],
   "assetsChecked": 4,

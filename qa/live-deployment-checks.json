@@ -1,0 +1,67 @@
+{
+  "date": "2026-10-24",
+  "sourceCommit": "2987431b9829bd287b84301cca290ff3efeb22f6",
+  "github": {
+    "url": "https://monexcalibur.github.io/nexora-ai-template/",
+    "actionsRun": "https://github.com/monExcalibur/nexora-ai-template/actions/runs/40089143378",
+    "status": "success",
+    "checked": [
+      "HTTPS homepage and canonical",
+      "CSS/JS/favicon and all public assets (HTTP and source-byte comparison)",
+      "Desktop and 375px mobile layout with no horizontal page overflow",
+      "Mobile menu opens and follows an anchor, then closes",
+      "Hash navigation and page refresh",
+      "Browser console has no captured errors or warnings",
+      "Visible fictional/demo labels",
+      "Task checkbox changes state",
+      "Monthly/yearly pricing changes to $180 Pro annual total",
+      "FAQ expands",
+      "Pro CTA opens honest local demo",
+      "Workflow run reveals fixed sample result; reset and Escape close work"
+    ]
+  },
+  "cloudflare": {
+    "url": "https://nexora-ai-template.pages.dev/",
+    "source": "native GitHub integration",
+    "productionBranch": "main",
+    "automaticDeploymentsEnabled": true,
+    "status": "success",
+    "checked": [
+      "HTTPS homepage and canonical",
+      "CSS/JS/favicon and all public assets (HTTP and source-byte comparison)",
+      "Desktop and 375px mobile layout with no horizontal page overflow",
+      "Mobile menu opens and follows an anchor, then closes",
+      "Hash navigation and page refresh",
+      "Browser console has no captured errors or warnings",
+      "Visible fictional/demo labels",
+      "Task checkbox changes state",
+      "Monthly/yearly pricing changes to $180 Pro annual total",
+      "FAQ expands",
+      "Pro CTA opens honest local demo",
+      "Workflow run reveals fixed sample result; reset and Escape close work"
+    ]
+  },
+  "browser": "Chrome",
+  "desktopWidthsObserved": [
+    1440,
+    1366
+  ],
+  "mobileWidthObserved": 375,
+  "consoleWarningsOrErrors": [],
+  "httpReports": [
+    "live-github-http.json",
+    "live-cloudflare-http.json"
+  ],
+  "screenshots": [
+    "live-github-desktop.jpg",
+    "live-github-mobile.jpg",
+    "live-cloudflare-desktop.jpg",
+    "live-cloudflare-mobile.jpg"
+  ],
+  "limitations": [
+    "Dated verification, not ongoing uptime monitoring.",
+    "One-page anchors; project/demo dialogs do not have separate routes.",
+    "All work is fictional; no backend, message delivery, payment or live AI.",
+    "Main-push deployment after this documentation update is verified separately at execution time."
+  ]
+}

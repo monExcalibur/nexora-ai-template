@@ -1,12 +1,39 @@
-# Deploy Nexora AI
+# Deploy and maintain Nexora AI
 
-Cloudflare Pages connected to GitHub is the primary target. GitHub Pages remains an optional manual alternative. Source is provided through its standalone GitHub repository. Connecting a host and starting a public deployment are separate owner actions.
+Both hosts were deployed and publicly tested on 2026-10-24. These are fictional portfolio demonstrations, not real client commissions or operating services.
 
-## 1. Open the standalone source repository
+| Target | Address |
+| --- | --- |
+| GitHub repository | [nexora-ai-template](https://github.com/monExcalibur/nexora-ai-template) |
+| GitHub Pages | [https://monexcalibur.github.io/nexora-ai-template/](https://monexcalibur.github.io/nexora-ai-template/) |
+| Cloudflare Pages | [https://nexora-ai-template.pages.dev/](https://nexora-ai-template.pages.dev/) |
 
-Use the public [Nexora AI repository](https://github.com/monExcalibur/nexora-ai-template). Its application files are at the repository root. Source upload does not activate hosting.
+## Architecture and production settings
 
-In PowerShell, clone into a new directory and run the source checks:
+The independent repository contains the application at its root. A normal push to `main` starts GitHub Actions and native Cloudflare Pages Git integration. They build the same commit separately, with different Vite bases. Only `dist` is published. Dependencies, source documentation, tests and raw QA are excluded from hosted assets.
+
+| Setting | GitHub Pages | Cloudflare Pages |
+| --- | --- | --- |
+| Production branch | `main` | `main` |
+| Trigger | Push to main; manual workflow dispatch | Native GitHub integration; automatic production deployments enabled |
+| Build command | `npm run build:github` | `npm run build:cloudflare` |
+| Output | `dist` | `dist` |
+| Repository root | `.` | Optional root field empty |
+| Asset base | `/nexora-ai-template/` | `/` |
+| Node line | `22` via setup-node | `NODE_VERSION=22` (first build used 22.23.4) |
+| Preset | `nexora` | `VITE_SITE_PRESET=nexora` |
+| Demo mode | `true` | `VITE_DEMO_MODE=true` |
+| Stable production canonical | Actual configure-pages URL | `VITE_SITE_URL=https://nexora-ai-template.pages.dev/` |
+
+The Cloudflare framework preset is None with the explicit build/output fields above. Cloudflare performed a locked `npm clean-install`. `.node-version` and package engines require Node 22.19 or newer. Cloudflare supplies `CF_PAGES=1`; the named build also enforces `/`. The local portable `npm run build` and dev commands remain available.
+
+`scripts/build-target.mjs` validates target settings, runs TypeScript and Vite, and rejects mismatched bases or unsafe canonical URLs. For a local GitHub build, it derives owner/repository from `origin`; Actions supplies `GITHUB_REPOSITORY` and authoritative Pages metadata. A fork therefore does not need a hardcoded owner edit. Cloudflare never uses temporary `CF_PAGES_URL` as canonical metadata. The current stable canonical is also shared with preview builds; change preview `VITE_SITE_URL` separately if a different indexing policy is wanted.
+
+All `VITE_*` values are public build inputs. Keep credentials out of them. `.env.local` is ignored and does not configure hosted builds. The Cloudflare GitHub App was granted access only to `nexora-ai-template` and `atelier-no8-template`. No Cloudflare API token, Wrangler dependency or deploy branch is required. GitHub uses its built-in scoped token and pinned official Pages actions.
+
+## Edit, validate and publish an update
+
+In PowerShell, clone into a new directory, or open the existing clone:
 
 ```powershell
 git clone https://github.com/monExcalibur/nexora-ai-template.git
@@ -14,78 +41,72 @@ if ($LASTEXITCODE -ne 0) { throw 'Clone failed.' }
 Set-Location -LiteralPath nexora-ai-template
 npm ci
 if ($LASTEXITCODE -ne 0) { throw 'Dependency installation failed.' }
-foreach ($checkName in @('format:check', 'typecheck', 'lint', 'test', 'audit:publication', 'build')) {
+npm run dev
+```
+
+Open [local development](http://127.0.0.1:4188/). Stop the dev server with Ctrl+C before reinstalling dependencies on Windows. Edit typed settings/content in `src/config/`; follow [CUSTOMIZATION_GUIDE.md](CUSTOMIZATION_GUIDE.md) for real branding, licensed assets and destinations.
+
+After editing, run:
+
+```powershell
+foreach ($checkName in @('format:check', 'typecheck', 'lint', 'test', 'audit:publication', 'build:github', 'build:cloudflare')) {
     npm run $checkName
     if ($LASTEXITCODE -ne 0) { throw "Check failed: $checkName" }
 }
+git status --short
+git diff --check
+git diff
 ```
 
-The default branch is `main`. For later changes, review `git status` and the diff, run checks, stage only the intended project files, commit and push normally. Never force-push or add tokens to remote URLs. `.gitignore` excludes dependencies, `dist`, credentials, local environments and temporary builds; `.env.example` contains public settings only. Source, public assets/notices, lockfile, checks, documentation and the manual workflow belong in Git.
+Each named build replaces local `dist`; the last command above leaves a Cloudflare-root build. Build the target you intend to preview. A local GitHub preview needs `npm run preview -- --base=/nexora-ai-template/`; a Cloudflare preview uses `npm run preview -- --base=/`. Stop preview with Ctrl+C. Use HTTP, not a file URL.
 
-Choose an application reuse license deliberately; third-party asset/library licenses remain separate. Earlier plans/QA are dated historical records, while this guide describes the standalone repository. Review staged contents before every public push; pattern scanning cannot detect every possible sensitive value.
+Review the exact source changes and new files before staging. Stage only the intended files, for example `git add -- src/config/content.ts` when that is the file you changed. Then inspect `git diff --cached`, commit and push normally:
 
-## 2. Connect GitHub to Cloudflare Pages
+```powershell
+git commit -m "Update portfolio content"
+if ($LASTEXITCODE -ne 0) { throw 'Commit failed.' }
+git push origin main
+if ($LASTEXITCODE -ne 0) { throw 'Push failed.' }
+```
 
-In the Cloudflare dashboard, open **Workers & Pages**, create an application and select **Pages → Connect to Git** (the Git import option). Choose GitHub, authorize access to the intended repository and select it. Use the Pages flow, not a Workers deployment requiring a Worker entry point. Set the production branch to `main`.
+Do not force-push or put a token in the remote URL. `.gitignore` excludes dependencies, `dist`, local environment files, credentials and temporary builds. Preserve third-party notices and review staged contents; pattern scanning cannot identify every sensitive value. The application source reuse license is a separate owner decision from included third-party licenses.
 
-Cloudflare's [Git integration guide](https://developers.cloudflare.com/pages/get-started/git-integration/) describes the connection and first deployment flow. No Cloudflare token or Wrangler dependency needs to be added to this static application.
+## Monitor both deployments
 
-## 3. Build and environment settings
+1. Open [GitHub Actions](https://github.com/monExcalibur/nexora-ai-template/actions), select the deployment run for the pushed commit and wait for both build and deploy jobs to succeed. Repository Settings → Pages uses GitHub Actions. A manual Run workflow is available for retry; leave the base override empty. Keep the portfolio demo settings enabled.
+2. Open [Cloudflare dashboard](https://dash.cloudflare.com/), choose Workers & Pages → `nexora-ai-template` → Deployments. Confirm Production, `main`, the same source commit and a successful build. Automatic deployments must remain enabled. Details exposes installation/build/output logs.
+3. Compare the commit shown on each platform with `git rev-parse HEAD`. One platform may finish earlier; a successful GitHub deployment does not prove Cloudflare succeeded.
+4. On a failure, inspect the failing stage before retrying. Check repository access, root, Node version, lockfile, target build command, output directory and environment scope. GitHub failures retain the previous published release; inspect Cloudflare's current production deployment separately.
 
-| Setting | Value |
-| --- | --- |
-| Framework preset | React (Vite), or None with the explicit settings below |
-| Production branch | `main` |
-| Root directory, dedicated repository | Repository root (leave the optional field empty) |
-| Root directory, current shared layout | `nexora-ai` |
-| Build command | `npm run build` |
-| Build output directory | `dist` (relative to the selected root) |
-| `NODE_VERSION`, Production and Preview | `22` (current Node 22 release, minimum 22.19) |
-| `VITE_BASE_PATH`, Production and Preview | `/` |
-| `VITE_SITE_PRESET` | `nexora` |
-| `VITE_DEMO_MODE` | `true` |
-| `VITE_DISABLED_SECTIONS` | Empty |
-| `VITE_SITE_URL`, Production | Initially unset, then the actual stable HTTPS homepage URL |
-| `VITE_SITE_URL`, Preview | Leave unset for this default demo |
+[Cloudflare Git integration](https://developers.cloudflare.com/pages/get-started/git-integration/) and [build settings](https://developers.cloudflare.com/pages/configuration/build-configuration/) describe the native connection. The integration is already active; do not create duplicate projects or switch to a Worker/direct upload to apply an ordinary update.
 
-Cloudflare installs dependencies before the build. Commit `package-lock.json`; the local release procedure and GitHub workflow also verify a clean `npm ci`. `.node-version` selects Node 22, and setting `NODE_VERSION=22` explicitly makes the dashboard requirement clear. Use Node 22.19 or newer to satisfy the application engine. Build/output/root settings follow [Cloudflare's build configuration](https://developers.cloudflare.com/pages/configuration/build-configuration/); supported Node overrides are documented in the [build image reference](https://developers.cloudflare.com/pages/configuration/build-image/).
+## Verify the public result
 
-Cloudflare provides `CF_PAGES=1`. Vite uses `/` for this target and rejects a conflicting non-root `VITE_BASE_PATH`. Without Cloudflare, the existing portable default remains `./`; explicit GitHub Pages subpaths still work. No source-directory prefix belongs in a Cloudflare public URL, even when the repository root setting is `nexora-ai`.
+Open both public URLs after every material change and refresh once. Check browser Network/Console, successful JS/CSS/favicon requests and correct canonical URL. Task checkboxes, monthly/yearly pricing, FAQ disclosures and workflow run/reset. Check the mobile menu, keyboard close/focus behavior, desktop layout and narrow screens. Refresh `#features` at each base. Verify no horizontal page overflow or missing media.
 
-`VITE_*` values are public build inputs, not secret storage. `.env.local` is ignored and will not configure a remote build; set values in the Pages dashboard for the appropriate Production/Preview environment. Do not add `.env.local` to Git.
+Live QA for this deployment is recorded in `qa/live-github-http.json`, `qa/live-cloudflare-http.json`, `qa/live-deployment-checks.json` and `qa/live-*-desktop.jpg` / `qa/live-*-mobile.jpg`. HTTP checks include every local public asset and compare asset bytes with the source. Cloudflare normally redirects `.html` documents such as image credits to extensionless URLs; that is expected when the final response is correct. Tests are a dated snapshot, not a continuous uptime guarantee.
 
-Use the stable site URL returned after the first deployment for production `VITE_SITE_URL`, including the trailing `/`, then rebuild. It generates canonical metadata and resolves an optional configured social image to an absolute URL. No social image is bundled by default. A configured Cloudflare URL must be an HTTPS root URL with no credentials, query or fragment. The application deliberately does not use the temporary `CF_PAGES_URL` as its canonical address. On preview builds, leave `VITE_SITE_URL` unset and retain the blank `seo.siteUrl` default, or explicitly use your stable production URL if that matches your indexing policy.
+## Roll back a problematic release
 
-## 4. Deploy and verify
+Prefer restoring the source with a new commit so both platforms stay consistent:
 
-Selecting **Save and Deploy** creates the first public deployment. Check the install/build logs and wait for a successful deployment status before using the returned URL. No URL is asserted to be live in this repository.
+```powershell
+git log --oneline -5
+# Replace BAD_COMMIT with the single problematic commit after reviewing it.
+git revert BAD_COMMIT
+if ($LASTEXITCODE -ne 0) { throw 'Resolve any revert conflicts before continuing.' }
+# Run the checks above, then:
+git push origin main
+```
 
-At the returned address, verify:
+This preserves history and automatically builds the corrected source on both hosts. For several dependent commits, review the rollback scope before reverting; do not reset/force-push shared history. Monitor both deployments and verify both public URLs again.
 
-1. Homepage and direct refresh, then `/#features` and `/licenses/react-MIT.txt`.
-2. Logo/favicon/CSS/JS requests with no 404s or localhost URLs.
-3. Mobile menu, task checkboxes, pricing and workflow dialog, Escape/focus restoration, FAQ disclosures and workflow run/reset.
-4. Responsive layouts at 320, 375, 768, 1024, 1440 and 1920px, plus keyboard focus and reduced-motion preference.
-5. Page title/favicon, visible concept labels, canonical and social image URL after configuring the production address.
+For an immediate Cloudflare-only recovery, choose an earlier successful Production deployment's menu → **Rollback to this deployment**. Preview deployments cannot be used for production rollback. Follow with the source revert so a later push does not redeploy the faulty version. See [Cloudflare rollbacks](https://developers.cloudflare.com/pages/configuration/rollbacks/). The two hosts have separate deployment histories; a rollback on one does not roll back the other.
 
-Only `dist` is hosted: source docs, tests, raw QA and dependencies are not deployment assets. The site uses anchors and a native demo dialog and has no separate application routes. Cloudflare Pages has [default SPA fallback behavior](https://developers.cloudflare.com/pages/configuration/serving-pages/) when no top-level `404.html` exists; this application needs no extra router rewrite. Adding routes later requires testing their semantics and refresh behavior separately.
+## Domains and limitations
 
-## 5. Automatic updates
+To add a custom domain later, associate it in the hosting platform first and follow its DNS/HTTPS steps. For Cloudflare, update production `VITE_SITE_URL` to the verified stable HTTPS root and rebuild; root base remains `/`. GitHub derives configured domain/base metadata through configure-pages. Verify both hosts after changing metadata. No domain purchase or DNS change was performed for this deployment.
 
-After Git integration is enabled, pushes to the production branch trigger a build/deployment. Other enabled branches can receive preview deployments. Run checks and review changes before pushing. Branch controls can disable automatic builds if needed; [Cloudflare's Git integration reference](https://developers.cloudflare.com/pages/configuration/git-integration/) explains production/preview controls. The retained GitHub Pages workflow has no push trigger, so it does not also publish automatically.
+The website uses one-page anchors and native dialogs, with no history router. Root and hash refreshes work; arbitrary nested application routes are not supported on GitHub Pages without a separately designed static-routing strategy. The workflow dialog has no independent URL and runs a fixed local example.
 
-Review failed builds under the deployment's build log. Confirm root directory, Node version, public base, environment scope and output directory. A successful local build does not prove that account permissions or the remote build environment are configured correctly.
-
-## 6. Add a custom domain later
-
-In the Pages project, select **Custom domains → Set up a custom domain** and add the domain there first. Follow the DNS instructions provided for that domain. An apex domain requires the domain to be a zone on the Cloudflare account with the appropriate nameservers; an externally managed subdomain can use a CNAME pointing to the assigned Pages hostname. Merely adding a DNS CNAME without associating the domain with Pages is insufficient. See [Cloudflare's custom domain guide](https://developers.cloudflare.com/pages/configuration/custom-domains/).
-
-Wait for domain/HTTPS activation, set production `VITE_SITE_URL` to the new stable `https://your-domain/` address, retain `VITE_BASE_PATH=/` and rebuild. Verify the new domain, static assets, canonical and social preview before sharing it. DNS propagation and certificate activation are owner-side deployment checks, not locally verified results.
-
-## GitHub Pages alternative
-
-Keep `.github/workflows/deploy.yml` and follow [PUBLISHING.md](PUBLISHING.md). That manual workflow reads GitHub Pages metadata and sets its own base/canonical variables; Cloudflare's environment settings do not apply to it. The workflow is manual-only and source pushes do not run it. Choose which site URL to present as the primary portfolio address.
-
-In the shared workspace, Nexora uses `.github/workflows/deploy-nexora.yml`; the existing Atelier `.github/workflows/deploy.yml` is preserved. A dedicated Nexora repository uses its own `.github/workflows/deploy.yml`.
-
-The two shared-root workflows publish to the same repository Pages address. Use separate repositories for independent Atelier and Nexora GitHub Pages sites; selecting Nexora in a shared repository replaces its current Pages deployment.
+Demo form/workflow actions do not send messages, create accounts, charge payments, call live AI or save visitor data remotely. A real client edition needs valid destinations/backend services and renewed accessibility, security and visual checks. Brands, projects, metrics and pricing remain explicitly fictional. JavaScript is required for the page body; no CMS, analytics or backend was added.

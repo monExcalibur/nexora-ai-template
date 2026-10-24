@@ -1,0 +1,59 @@
+{
+  "checkedAt": "2026-10-24T11:32:09.519091+00:00",
+  "target": "cloudflare",
+  "url": "https://nexora-ai-template.pages.dev/",
+  "status": 200,
+  "canonical": "https://nexora-ai-template.pages.dev/",
+  "sourceCommit": "2987431b9829bd287b84301cca290ff3efeb22f6",
+  "resources": [
+    {
+      "url": "https://nexora-ai-template.pages.dev/favicon.svg",
+      "resolvedUrl": "https://nexora-ai-template.pages.dev/favicon.svg",
+      "status": 200,
+      "contentType": "image/svg+xml",
+      "bytes": 183,
+      "publicAssetMatchesSource": true
+    },
+    {
+      "url": "https://nexora-ai-template.pages.dev/assets/index-CFeAIYoy.js",
+      "resolvedUrl": "https://nexora-ai-template.pages.dev/assets/index-CFeAIYoy.js",
+      "status": 200,
+      "contentType": "application/javascript",
+      "bytes": 281393,
+      "publicAssetMatchesSource": false
+    },
+    {
+      "url": "https://nexora-ai-template.pages.dev/assets/index-D0CjDw7g.css",
+      "resolvedUrl": "https://nexora-ai-template.pages.dev/assets/index-D0CjDw7g.css",
+      "status": 200,
+      "contentType": "text/css; charset=utf-8",
+      "bytes": 54092,
+      "publicAssetMatchesSource": false
+    },
+    {
+      "url": "https://nexora-ai-template.pages.dev/flowpilot.svg",
+      "resolvedUrl": "https://nexora-ai-template.pages.dev/flowpilot.svg",
+      "status": 200,
+      "contentType": "image/svg+xml",
+      "bytes": 245,
+      "publicAssetMatchesSource": true
+    },
+    {
+      "url": "https://nexora-ai-template.pages.dev/licenses/lucide-LICENSE.txt",
+      "resolvedUrl": "https://nexora-ai-template.pages.dev/licenses/lucide-LICENSE.txt",
+      "status": 200,
+      "contentType": "text/plain; charset=utf-8",
+      "bytes": 3208,
+      "publicAssetMatchesSource": true
+    },
+    {
+      "url": "https://nexora-ai-template.pages.dev/licenses/react-MIT.txt",
+      "resolvedUrl": "https://nexora-ai-template.pages.dev/licenses/react-MIT.txt",
+      "status": 200,
+      "contentType": "text/plain; charset=utf-8",
+      "bytes": 1088,
+      "publicAssetMatchesSource": true
+    }
+  ],
+  "allPassed": true
+}

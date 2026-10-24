@@ -38,7 +38,9 @@ Open [localhost:4188](http://127.0.0.1:4188/). If occupied, use `npm run dev -- 
 | `npm test` | Configuration, palette, pricing, action, metadata and deployment contracts |
 | `npm run format:check` | Formatting check (`npm run format` applies it) |
 | `npm run audit:publication` | Credential-pattern and local-asset audit |
-| `npm run build` | Production output in `dist/` |
+| `npm run build` | Portable local production build in `dist/` |
+| `npm run build:github` | Repository-subpath production build |
+| `npm run build:cloudflare` | Root-hosted Cloudflare production build |
 | `npm run preview` | Inspect the production build locally |
 
 ## Customization
@@ -49,11 +51,17 @@ Edit `src/config/siteConfig.ts` for branding, sections, demo mode, SEO and the l
 
 ## Deployment
 
-Cloudflare Pages connected to GitHub is the primary target: **`npm run build`**, output **`dist`**, Node **22**, root base **`/`**. `CF_PAGES=1` selects root hosting and rejects conflicting paths. Set production `VITE_SITE_URL` to the actual stable HTTPS homepage when known; temporary deployment URLs are not used as canonical metadata.
+Both production demonstrations are published and verified over HTTPS on 2026-10-24:
 
-[DEPLOYMENT_GUIDE.md](DEPLOYMENT_GUIDE.md) provides exact scoped GitHub copy/check/push commands, Cloudflare settings, environments, automatic updates and custom domains. [PUBLISHING.md](PUBLISHING.md) covers the retained manual GitHub Pages alternative. Local builds otherwise retain `./`; repository subpaths remain configurable.
+| Destination | Public address |
+| --- | --- |
+| Source repository | [nexora-ai-template](https://github.com/monExcalibur/nexora-ai-template) |
+| GitHub Pages | [https://monexcalibur.github.io/nexora-ai-template/](https://monexcalibur.github.io/nexora-ai-template/) |
+| Cloudflare Pages | [https://nexora-ai-template.pages.dev/](https://nexora-ai-template.pages.dev/) |
 
-Hosting is not enabled. Connect this repository to Cloudflare Pages when ready; uploading source does not deploy a website. Only `dist` is hosted. This one-page anchor-based site needs no client router or backend.
+A push to `main` automatically triggers both platforms from the same source commit. GitHub Actions runs `npm run build:github` with repository base `/nexora-ai-template/`; native Cloudflare Pages Git integration runs `npm run build:cloudflare` with root base `/`. Each platform publishes its own `dist` build and stable canonical URL. The GitHub owner/repository are derived from Actions metadata or the Git remote, not hardcoded in the build script.
+
+[DEPLOYMENT_GUIDE.md](DEPLOYMENT_GUIDE.md) covers updates, public build settings, monitoring, verification, custom domains and rollback. [DEPLOYMENT_EXECUTION_PLAN.md](DEPLOYMENT_EXECUTION_PLAN.md) and [qa/live-deployment-checks.json](qa/live-deployment-checks.json) record the deployment checks. Historical release reports describe their original local verification date; this section supersedes their pre-publication hosting status.
 
 ## Demo limitations
 
