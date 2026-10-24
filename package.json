@@ -13,7 +13,9 @@
     "format:check": "prettier --check src tests scripts vite.config.ts eslint.config.js *.json",
     "test": "node --experimental-strip-types --test tests/*.test.ts tests/*.test.mjs",
     "audit:publication": "node --experimental-strip-types scripts/audit-publication.mjs",
-    "verify:deployment": "node --test tests/deployment.test.mjs"
+    "verify:deployment": "node --test tests/deployment.test.mjs",
+    "build:github": "node scripts/build-target.mjs github",
+    "build:cloudflare": "node scripts/build-target.mjs cloudflare"
   },
   "dependencies": {
     "lucide-react": "1.61.0",

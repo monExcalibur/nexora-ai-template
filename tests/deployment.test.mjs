@@ -13,9 +13,10 @@ const source = readFileSync(workflowFile, 'utf8')
 const document = parseDocument(source, { uniqueKeys: true })
 const workflow = document.toJS()
 
-test('workflow is valid YAML with an explicit manual trigger only', () => {
+test('workflow is valid YAML with main pushes and manual dispatch', () => {
   assert.deepEqual(document.errors, [])
-  assert.deepEqual(Object.keys(workflow.on), ['workflow_dispatch'])
+  assert.deepEqual(Object.keys(workflow.on).sort(), ['push', 'workflow_dispatch'])
+  assert.deepEqual(workflow.on.push.branches, ['main'])
   assert.equal(workflow.on.workflow_dispatch.inputs.base_path.default, '')
 })
 test('build verifies locked source, defaults to honest demo and uploads dist only', () => {
@@ -32,8 +33,8 @@ test('build verifies locked source, defaults to honest demo and uploads dist onl
   assert.equal(workflow.on.workflow_dispatch.inputs.demo_mode.default, true)
   assert.equal(workflow.on.workflow_dispatch.inputs.site_preset.default, 'nexora')
   assert.equal(
-    steps.find((step) => step.run === 'npm run build').env.VITE_DEMO_MODE,
-    "${{ inputs.demo_mode && 'true' || 'false' }}",
+    steps.find((step) => step.run === 'npm run build:github').env.VITE_DEMO_MODE,
+    "${{ github.event_name == 'workflow_dispatch' && inputs.demo_mode == false && 'false' || 'true' }}",
   )
   assert.equal(
     steps.find((step) => step.uses?.startsWith('actions/upload-pages-artifact@')).with.path,
@@ -51,7 +52,13 @@ test('deployment waits for a successful build and has scoped Pages permissions',
       if (step.uses) assert.match(step.uses, /^actions\/[a-z-]+@[a-f0-9]{40}$/)
     }
 })
-test('workspace and standalone workflow copies stay identical', () => {
+test('legacy shared workflow comparison applies only inside a shared Git root', () => {
+  const projectRoot = fileURLToPath(new URL('../', import.meta.url))
+  const gitRoot = execFileSync('git', ['rev-parse', '--show-toplevel'], {
+    cwd: projectRoot,
+    encoding: 'utf8',
+  }).trim()
+  if (path.resolve(gitRoot) === path.resolve(projectRoot)) return
   const workspace = new URL('../../.github/workflows/deploy-nexora.yml', import.meta.url)
   if (existsSync(workspace) && readFileSync(workspace, 'utf8').includes('name: Deploy Nexora AI'))
     assert.equal(readFileSync(workspace, 'utf8'), source)
