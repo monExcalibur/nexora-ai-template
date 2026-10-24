@@ -61,7 +61,26 @@
   "limitations": [
     "Dated verification, not ongoing uptime monitoring.",
     "One-page anchors; project/demo dialogs do not have separate routes.",
-    "All work is fictional; no backend, message delivery, payment or live AI.",
-    "Main-push deployment after this documentation update is verified separately at execution time."
-  ]
+    "All work is fictional; no backend, message delivery, payment or live AI."
+  ],
+  "automaticDeploymentVerification": {
+    "event": "push",
+    "branch": "main",
+    "sourceCommit": "cdf717d122c529c18bdedb43825e451b3c461331",
+    "githubActionsRun": 40092820785,
+    "githubBuild": "success",
+    "githubDeploy": "success",
+    "cloudflareApp": "cloudflare-workers-and-pages",
+    "cloudflarePages": "completed/success"
+  },
+  "finalLocalChecks": {
+    "format": "passed",
+    "typecheck": "passed",
+    "lint": "passed",
+    "testsPassed": 27,
+    "publicationAudit": "zero findings or missing assets",
+    "githubBuild": "passed",
+    "cloudflareBuild": "passed",
+    "sourceAndPublicFilesUnchanged": 29
+  }
 }

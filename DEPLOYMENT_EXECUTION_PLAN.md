@@ -41,7 +41,7 @@ Verified: repository monExcalibur/nexora-ai-template; origin matches, admin/main
 
 - [x] Commit/push verified configuration normally, trigger/observe GitHub Actions and fix any failures.
 - [x] Observe native Cloudflare Git build/deploy logs and confirm a successful production deployment.
-- [ ] Verify main-push automation on both platforms against source commit IDs.
+- [x] Verify main-push automation on both platforms against source commit IDs.
 
 ## 7. Public URL verification
 
@@ -53,8 +53,8 @@ Verified: repository monExcalibur/nexora-ai-template; origin matches, admin/main
 ## 8. Final documentation
 
 - [x] Update README and deployment guide with actual URLs/status, commands, automation, monitoring and safe rollback instructions.
-- [ ] Record results and remaining limits, update this checklist and commit/push final documentation.
-- [ ] Verify the last source commit and hosted deployments, clean Git state, retained notices and unchanged UI/assets.
+- [x] Record results and remaining limits, update this checklist and commit/push final documentation.
+- [x] Verify the last source commit and hosted deployments, clean Git state, retained notices and unchanged UI/assets.
 
 No URL is considered live until deployment and public testing succeed. Cloudflare Git integration will not be silently replaced by direct upload or a different hosting service.
 
@@ -67,3 +67,5 @@ GitHub execution verified: push-triggered Actions run 40089143378 completed succ
 Cloudflare first deployment succeeded from 2987431b9829bd287b84301cca290ff3efeb22f6 using Node 22.23.4, locked npm clean-install, npm run build:cloudflare, root base / and dist. Dashboard returned https://nexora-ai-template.pages.dev/; VITE_SITE_URL is this stable URL. Public verification is next.
 
 Both public URLs verified on 2026-10-24. HTTP/resource evidence and Chrome desktop/mobile checks are in qa/live-*.json and screenshots. Cloudflare production settings: native GitHub integration, automatic main deployment enabled, npm run build:cloudflare, dist, Node 22, default demo preset, root base and the actual stable pages.dev canonical. The final documentation push will exercise automatic deployment on both hosts.
+
+Final execution evidence: documentation push cdf717d122c529c18bdedb43825e451b3c461331 automatically completed GitHub Actions run 40092820785 (build/deploy success) and the native Cloudflare Pages check (cloudflare-workers-and-pages, completed/success) for the same SHA. All named builds, TypeScript, lint, formatting, tests and credential/public-asset audit passed again. No source/public asset changed; clean Git state was confirmed after that push. This final checklist/evidence commit is followed by another remote-head and hosted check before the user report. No critical deployment limitation remains; demo/backend/routing limits are documented.
